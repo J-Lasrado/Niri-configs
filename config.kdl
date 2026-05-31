@@ -170,16 +170,15 @@ spawn-at-startup "sh" "-c" "swaybg --image ~/Pictures/astronaut.jpg"
 //spawn-at-startup "sh" "-c" "systemctl --user reset-failed waybar.service"
 //spawn-at-startup "sh" "-c" "systemctl --user restart waybar.service"
 binds {
-    Mod+p {spawn "sh" "-c" "yazi"; }
-    Mod+x {spawn "sh" "yazi";}
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+W  { spawn "flatpak" "run" "net.waterfox.waterfox"; }
-    Mod+N {spawn "nautilus";}
+    Mod+p { spawn "sh" "-c" "pavucontrol"; }
+    Mod+B { spawn "flatpak" "run" "net.waterfox.waterfox"; }
+    Mod+E { spawn "dolphin"; }
+    Mod+C { spawn "code"; }
+    Mod+return { spawn "kitty"; }
     Mod+Shift+Ctrl+Alt+P { spawn "sh" "-c" "shutdown now"; }
     Mod+Shift+Ctrl+Alt+R { spawn "sh" "-c" "reboot"; }
-
-    Mod+T hotkey-overlay-title="Open a Terminal: konsole" { spawn "kitty"; }
-    Mod+Space {spawn "sh" "-c" "cd $HOME/.config/rofi/launchers/type-5/ && ./launcher.sh";}
+    Mod+Space { spawn "sh" "-c" "cd $HOME/.config/rofi/launchers/type-5/ && ./launcher.sh"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
@@ -323,7 +322,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+C { center-column; }
+    //Mod+C { center-column; }
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
